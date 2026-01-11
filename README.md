@@ -5,18 +5,18 @@ This document is the official comprehensive documentation for the West Nile Viru
 The objective of this project is to build a machine learning model to predict the presence of West Nile Virus (WnvPresent) in mosquito trap records using weather, trap, and spray datasets. The solution includes advanced feature engineering grounded in biological reasoning and data science principles.
 2. Repository Structure Overview
 The repository follows a modular structure for clarity and collaboration:
-� data/raw: original CSV data files.
-� data/processed: cleaned data ready for modeling.
-� src: Python modules for preprocessing, feature engineering, and modeling.
-� notebooks: exploratory and modeling notebooks.
-� reports: generated visualization outputs.
+> data/raw: original CSV data files.
+> data/processed: cleaned data ready for modeling.
+> src: Python modules for preprocessing, feature engineering, and modeling.
+> notebooks: exploratory and modeling notebooks.
+> reports: generated visualization outputs.
 3. Installation and Setup
 To run this project locally, create a Python virtual environment and install dependencies from requirements.txt using pip. Ensure that python-docx is also installed to allow generation of Word documentation.
 4. Data Sources and Structure
 This project integrates three primary datasets:
-� Train.csv: Contains mosquito trap collection records, coordinates, species, and virus presence labels.
-� Weather.csv: Daily weather records from two stations with complex missing values.
-� Spray.csv: Insecticide spray application logs with spatial and temporal fields.
+> Train.csv: Contains mosquito trap collection records, coordinates, species, and virus presence labels.
+> Weather.csv: Daily weather records from two stations with complex missing values.
+> Spray.csv: Insecticide spray application logs with spatial and temporal fields.
 5. Train Dataset Preprocessing
 Data cleaning included date parsing with extraction of year, month, week, and day-of-year components. Duplicate records were handled based on trap, date, and species keys before merging with weather and spray data.
 6. Weather Dataset Comprehensive Cleaning
@@ -31,12 +31,12 @@ Station 2 weather values were missing for sunrise, sunset, and some other fields
 EDA was performed to understand the seasonal patterns in weather and mosquito activity, correlation between weather events, and preliminary data behavior. Visualizations such as histograms, time-series plots, and correlation heatmaps were generated for insight.
 9. Feature Engineering
 Advanced feature engineering included:
-� Temporal lags (e.g., 14-day rolling averages for temperature and precipitation).
-� Cumulative heat-related metrics.
-� Relative humidity calculations.
-� Daylight change metrics.
-� Weather events and intensity encoding.
-� Spray proximity and intensity features.
+> Temporal lags (e.g., 14-day rolling averages for temperature and precipitation).
+> Cumulative heat-related metrics.
+> Relative humidity calculations.
+> Daylight change metrics.
+> Weather events and intensity encoding.
+> Spray proximity and intensity features.
 10. Data Merging Process
 Weather and spray features were merged into the train dataset using appropriate join keys and spatial-temporal logic to ensure accurate alignment of records.
 11. Correlation and Feature Redundancy
