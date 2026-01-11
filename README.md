@@ -1,5 +1,5 @@
 [West_Nile_Virus_Project_Documentation.txt](https://github.com/user-attachments/files/24553063/West_Nile_Virus_Project_Documentation.txt)
-West Nile Virus Outbreak Prediction Documentation
+# West Nile Virus Outbreak Prediction Documentation
 This document is the official comprehensive documentation for the West Nile Virus outbreak prediction project. It is authored by the project developer and details every step from data ingestion to model evaluation.
 1. Project Objective
 The objective of this project is to build a machine learning model to predict the presence of West Nile Virus (WnvPresent) in mosquito trap records using weather, trap, and spray datasets. The solution includes advanced feature engineering grounded in biological reasoning and data science principles.
