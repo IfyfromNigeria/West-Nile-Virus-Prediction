@@ -6,7 +6,7 @@ from astral import LocationInfo
 from astral.sun import sun
 from geopy.distance import geodesic
 from sklearn.neighbors import BallTree
-from config import STATION_COORDS, TIMEZONE, EARTH_RADIUS_KM
+from src.config import STATION_COORDS, TIMEZONE, EARTH_RADIUS_KM
 
 PHENOMENA = [
     "FC","TS","GR","RA","DZ","SN","SG","GS","PL","IC","FG","BR","UP",
@@ -59,4 +59,5 @@ def parse_codes(codestr):
     return output
 
 def km_to_radians(km):
+
     return km / EARTH_RADIUS_KM
