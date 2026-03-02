@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import nearest_station
+from src.utils import nearest_station
 
 def merge_train_weather(train_path, weather_path, output_path):
     train = pd.read_csv(train_path, parse_dates=["Date"])
@@ -19,5 +19,6 @@ def merge_train_weather(train_path, weather_path, output_path):
 
     train_weather.dropna(inplace=True)
     train_weather.to_csv(output_path, index=False)
+
 
     return train_weather
