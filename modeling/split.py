@@ -1,4 +1,4 @@
-from config import RANDOM_STATE
+from src.config import RANDOM_STATE
 
 def split_data(data):
     train = data[data["year"] < 2013]
@@ -11,5 +11,6 @@ def split_data(data):
 
     X_test = test.drop(columns=["WnvPresent","year"])
     y_test = test["WnvPresent"]
+
 
     return X_train, X_test, y_train, y_test
