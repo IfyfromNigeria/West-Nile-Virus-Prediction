@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from utils import (
+from src.utils import (
     build_station2_location,
     get_calculated_sun_times,
     to_lst_string,
@@ -65,3 +65,4 @@ def clean_weather(input_path, output_path):
     weather.dropna(inplace=True)
 
     weather.to_csv(output_path, index=False)
+
