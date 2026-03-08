@@ -1,41 +1,21 @@
 import pytz
-
-RAW_DATA_DIR = "data/raw"
-PROCESSED_DATA_DIR = "data/processed"
-REPORTS_DIR = "reports"
-
-TIMEZONE = pytz.timezone("US/Central")
-
-STATION_COORDS = {
-    1: (41.9786, -87.9048),
-    2: (41.786, -87.752)
-}
-
-EARTH_RADIUS_KM = 6371.0
-RANDOM_STATE = 16
-
-PCA_COMPONENTS = 25
-
-import pytz
-
-# ── Directory paths ───────────────────────────────────────────────────────────
-
-RAW_DATA_DIR       = “data/raw”
+# ── Directory paths
+RAW_DATA_DIR       = “data”
 PROCESSED_DATA_DIR = “data/processed”
 REPORTS_DIR        = “reports”
 
-# ── Timezone ──────────────────────────────────────────────────────────────────
+# Timezone
 
 TIMEZONE = pytz.timezone(“US/Central”)
 
-# ── Weather station coordinates (lat, lon) ────────────────────────────────────
+# Weather station coordinates (lat, lon) 
 
 STATION_COORDS = {
 1: (41.9786, -87.9048),
 2: (41.786,  -87.752),
 }
 
-# ── Modelling constants ───────────────────────────────────────────────────────
+# Modelling constants 
 
 EARTH_RADIUS_KM = 6371.0
 RANDOM_STATE    = 16
