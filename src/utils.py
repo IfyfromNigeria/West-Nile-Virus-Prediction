@@ -46,7 +46,7 @@ def to_lst_string(dt) -> str:
     undoing any DST offset that astral may have applied.
     """
     if dt.dst() != datetime.timedelta(0):
-    dt = dt - datetime.timedelta(hours=1)
+        dt = dt - datetime.timedelta(hours=1)
     return dt.strftime("%H%M")
 
 def fix_inconsistencies(val: str):
@@ -56,13 +56,12 @@ def fix_inconsistencies(val: str):
     Returns pd.NaT on failure.
     """
     try:
-    if str(val).endswith("60"):
-    hour = int(str(val)[:2]) + 1
-    hour = 0 if hour >= 24 else hour
-    val  = f"{hour:02d}00"
-    return pd.to_datetime(val, format="%H%M")
+        if str(val).endswith("60"):
+            hour = 0 if hour >= 24 else hour
+            val  = f"{hour:02d}00"
+        return pd.to_datetime(val, format="%H%M")
     except (ValueError, TypeError):
-    return pd.NaT
+        return pd.NaT
 
 # CodeSum parsing
 
@@ -101,3 +100,4 @@ def inches_to_mm(series: pd.Series) -> pd.Series:
 
 def inhg_to_hpa(series: pd.Series) -> pd.Series:
     return (series * 33.8639).round(1)
+
