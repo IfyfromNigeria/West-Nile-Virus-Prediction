@@ -28,7 +28,7 @@ return 1 if d1 < d2 else 2
 def build_station2_location() -> LocationInfo:
 # Build an astral LocationInfo object for Station 2.
 lat, lon = STATION_COORDS[2]
-return LocationInfo(“Station_2”, “Chicago”, “US/Central”, lat, lon)
+return LocationInfo("Station_2", "Chicago", "US/Central", lat, lon)
 
 # Sunrise / sunset helpers
 
@@ -38,7 +38,7 @@ Return (sunrise, sunset) as timezone-aware datetimes for *date*
 at *location*, expressed in US/Central time.
 """
 s = sun(location.observer, date=date, tzinfo=TIMEZONE)
-return s[“sunrise”], s[“sunset”]
+return s["sunrise"], s["sunset"]
 
 def to_lst_string(dt) -> str:
 """
@@ -47,7 +47,7 @@ undoing any DST offset that astral may have applied.
 """
 if dt.dst() != datetime.timedelta(0):
 dt = dt - datetime.timedelta(hours=1)
-return dt.strftime(”%H%M”)
+return dt.strftime("%H%M")
 
 def fix_inconsistencies(val: str):
 """
@@ -56,11 +56,11 @@ edge-case where minutes equal ‘60’ (e.g. ‘0560’ → ‘0600’).
 Returns pd.NaT on failure.
 """
 try:
-if str(val).endswith(“60”):
+if str(val).endswith("60"):
 hour = int(str(val)[:2]) + 1
 hour = 0 if hour >= 24 else hour
-val  = f”{hour:02d}00”
-return pd.to_datetime(val, format=”%H%M”)
+val  = f"{hour:02d}00"
+return pd.to_datetime(val, format="%H%M")
 except (ValueError, TypeError):
 return pd.NaT
 
@@ -101,5 +101,6 @@ return (series * 25.4).round(2)
 
 def inhg_to_hpa(series: pd.Series) -> pd.Series:
 return (series * 33.8639).round(1)
+
 
 
