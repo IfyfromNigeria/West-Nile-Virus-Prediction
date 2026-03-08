@@ -57,6 +57,7 @@ def fix_inconsistencies(val: str):
     """
     try:
         if str(val).endswith("60"):
+            hour = int(str(val)[:2]) + 1
             hour = 0 if hour >= 24 else hour
             val  = f"{hour:02d}00"
         return pd.to_datetime(val, format="%H%M")
@@ -100,5 +101,6 @@ def inches_to_mm(series: pd.Series) -> pd.Series:
 
 def inhg_to_hpa(series: pd.Series) -> pd.Series:
     return (series * 33.8639).round(1)
+
 
 
