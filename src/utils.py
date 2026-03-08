@@ -12,9 +12,9 @@ from src.config import STATION_COORDS, TIMEZONE, EARTH_RADIUS_KM
 # Weather phenomena codes used in CodeSum parsing 
 
 PHENOMENA = [
-“FC”, “TS”, “GR”, “RA”, “DZ”, “SN”, “SG”, “GS”, “PL”, “IC”,
-“FG”, “BR”, “UP”, “HZ”, “FU”, “VA”, “DU”, “DS”, “PO”, “SA”,
-“SS”, “PY”, “SQ”, “DR”, “SH”, “FZ”, “MI”, “PR”, “BC”, “BL”, “VC”,
+"FC", "TS", "GR", "RA", "DZ", "SN", “SG”, "GS", "PL", "IC",
+"FG", "BR", "UP", "HZ", "FU", "VA", "DU", "DS", "PO", "SA",
+"SS", "PY", "SQ", "DR", "SH", "FZ", "MI", "PR", "BC", "BL", "VC",
 ]
 
 # Station helpers
@@ -101,3 +101,4 @@ return (series * 25.4).round(2)
 
 def inhg_to_hpa(series: pd.Series) -> pd.Series:
 return (series * 33.8639).round(1)
+
