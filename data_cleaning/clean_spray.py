@@ -1,7 +1,7 @@
 import pandas as pd
 
 def clean_spray(input_path: str, output_path: str) -> pd.DataFrame:
-    “””
+    """
     Load and clean the raw spray dataset.
     
     ```
@@ -35,3 +35,4 @@ def clean_spray(input_path: str, output_path: str) -> pd.DataFrame:
     
     spray.to_csv(output_path, index=False)
     return spray
+
