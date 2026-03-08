@@ -22,7 +22,7 @@ def setup_directories() -> None:
         Path(path).mkdir(parents=True, exist_ok=True)
 
 # Timezone
-TIMEZONE = pytz.timezone(“US/Central”)
+TIMEZONE = pytz.timezone("US/Central")
 
 # Weather station coordinates (lat, lon)
 
@@ -37,4 +37,5 @@ EARTH_RADIUS_KM = 6371.0
 RANDOM_STATE    = 16
 PCA_COMPONENTS  = 25
 TEST_YEAR       = 2013          # year used as held-out test set
+
 
