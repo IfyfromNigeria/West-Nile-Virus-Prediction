@@ -101,3 +101,4 @@ def inches_to_mm(series: pd.Series) -> pd.Series:
 def inhg_to_hpa(series: pd.Series) -> pd.Series:
     return (series * 33.8639).round(1)
 
+
