@@ -4,9 +4,9 @@ from pathlib import Path
 # Directory paths 
 # Raw CSVs (train.csv, weather.csv, spray.csv) sit directly under data/
 
-RAW_DATA_DIR       = “data”
-PROCESSED_DATA_DIR = “data/processed”   # created at runtime, not in repo
-REPORTS_DIR        = “reports”           # created at runtime, not in repo
+RAW_DATA_DIR       = "data"
+PROCESSED_DATA_DIR = "data/processed"   # created at runtime, not in repo
+REPORTS_DIR        = "reports"           # created at runtime, not in repo
 
 def setup_directories() -> None:
     """
@@ -37,3 +37,4 @@ EARTH_RADIUS_KM = 6371.0
 RANDOM_STATE    = 16
 PCA_COMPONENTS  = 25
 TEST_YEAR       = 2013          # year used as held-out test set
+
