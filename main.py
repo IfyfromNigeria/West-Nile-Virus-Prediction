@@ -93,7 +93,8 @@ def main() -> None:
     # Save metrics to file for CML report
     with open("metrics.txt", "w") as f:
         for key, value in metrics.items():
-            f.write(f"{key}: {value:.4f}\n")
+            if isinstance(value, float):
+                f.write(f"{key}: {value:.4f}\n")
     
     print("\n Pipeline complete.")
     return metrics
