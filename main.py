@@ -89,6 +89,11 @@ def main() -> None:
     # 7. Model training & evaluation
     print("\n[7/7] Training XGBoost ...")
     metrics = train_xgb(X_train_pca, y_train, X_test_pca, y_test)
+
+    # Save metrics to file for CML report
+    with open("metrics.txt", "w") as f:
+        for key, value in metrics.items():
+            f.write(f"{key}: {value:.4f}\n)
     
     print("\n Pipeline complete.")
     return metrics
