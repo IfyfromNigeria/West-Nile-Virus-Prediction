@@ -1,0 +1,35 @@
+name: west_nile
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install CML
+        run: npm install -g @dvcorg/cml
+      - name: Train model and report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python main.py
+
+          echo "## Model Evaluation" > report.md
+          cat metrics.txt >> report.md
+
+          echo "## Confusion Matrix" >> report.md
+          cml-publish reports/Conf_matrix.png --md >> report.md
+
+          echo "## PCA Confusion Matrix" >> report.md
+          cml-publish "reports/Conf_matrix(pca).png" --md >> report.md
+
+          echo "## WNV Distribution" >> report.md
+          cml-publish "reports/Dist of WNV plot.png" --md >> report.md
+
+          cml-send-comment report.md
